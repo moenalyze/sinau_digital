@@ -4,10 +4,8 @@ import {
   ChevronRight,
   Maximize2,
   Minimize2,
-  Eye,
   LayoutGrid,
   X,
-  MessageSquare,
   ExternalLink,
 } from "lucide-react";
 import logoImg from "./assets/logo.png";
@@ -238,7 +236,6 @@ function pad(n) {
 
 export default function SinauDigitalDeck() {
   const [index, setIndex] = useState(0);
-  const [showNotes, setShowNotes] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showGridModal, setShowGridModal] = useState(false);
 
@@ -284,9 +281,6 @@ export default function SinauDigitalDeck() {
       } else if (e.key.toLowerCase() === "f") {
         e.preventDefault();
         toggleFullscreen();
-      } else if (e.key.toLowerCase() === "n") {
-        e.preventDefault();
-        setShowNotes((prev) => !prev);
       } else if (e.key.toLowerCase() === "g") {
         e.preventDefault();
         setShowGridModal((prev) => !prev);
@@ -340,19 +334,6 @@ export default function SinauDigitalDeck() {
           >
             <LayoutGrid className="w-3.5 h-3.5" />
             <span className="hidden md:inline">Semua Slide [G]</span>
-          </button>
-
-          <button
-            onClick={() => setShowNotes((prev) => !prev)}
-            title="Panduan Pemateri [N]"
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-colors ${
-              showNotes
-                ? "bg-blue-600 text-white shadow-sm"
-                : "bg-slate-100 hover:bg-slate-200 text-slate-700"
-            }`}
-          >
-            <Eye className="w-3.5 h-3.5" />
-            <span className="hidden md:inline">Panduan [N]</span>
           </button>
 
           <button
@@ -616,22 +597,6 @@ export default function SinauDigitalDeck() {
                   />
                 </div>
               </div>
-            </div>
-          )}
-
-          {/* Floating / Collapsible Speaker Notes */}
-          {showNotes && (
-            <div className="absolute bottom-4 left-6 right-6 z-30 p-4 rounded-2xl bg-slate-900/95 text-white border border-slate-700 shadow-2xl max-w-4xl mx-auto">
-              <div className="flex items-center justify-between mb-1.5">
-                <div className="flex items-center gap-2 text-blue-300 font-bold text-xs uppercase tracking-wider">
-                  <MessageSquare className="w-3.5 h-3.5" />
-                  <span>Panduan Pemateri KKN</span>
-                </div>
-                <span className="text-[10px] text-slate-400 font-mono">Tekan N untuk sembunyikan</span>
-              </div>
-              <p className="text-slate-100 text-xs sm:text-sm leading-relaxed italic font-medium">
-                {slide.notes}
-              </p>
             </div>
           )}
         </div>
