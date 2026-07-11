@@ -440,14 +440,24 @@ export default function SinauDigitalDeck() {
             /* LAYOUT COVER (Slide 1 & 11) */
             <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center h-full max-h-full">
               {/* Kiri Cover: Judul & Poin */}
-              <div className="lg:col-span-6 space-y-4 flex flex-col justify-center">
+              <div className="lg:col-span-6 space-y-5 flex flex-col justify-center">
                 <h1
-                  className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight bg-gradient-to-r ${accent.gradientTitle} bg-clip-text text-transparent leading-tight`}
+                  className={`${
+                    slide.points && slide.points.length > 0
+                      ? "text-2xl sm:text-3xl lg:text-4xl"
+                      : "text-3xl sm:text-4xl lg:text-5xl"
+                  } font-extrabold tracking-tight bg-gradient-to-r ${accent.gradientTitle} bg-clip-text text-transparent leading-tight`}
                 >
                   {slide.title}
                 </h1>
                 {slide.subtitle && (
-                  <p className="text-sm sm:text-base text-slate-600 font-semibold">
+                  <p
+                    className={`${
+                      slide.points && slide.points.length > 0
+                        ? "text-sm sm:text-base"
+                        : "text-base sm:text-lg"
+                    } text-slate-600 font-semibold leading-relaxed`}
+                  >
                     {slide.subtitle}
                   </p>
                 )}
