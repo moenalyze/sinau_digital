@@ -7,11 +7,23 @@ import {
   Eye,
   LayoutGrid,
   X,
-  Image as ImageIcon,
   MessageSquare,
-  Sparkles,
+  ExternalLink,
 } from "lucide-react";
 import logoImg from "./assets/logo.png";
+import slide1Img from "./assets/slide_1.jpg";
+import slide2Img from "./assets/slide_2.jpg";
+import slide3Img from "./assets/slide_3.jpg";
+import slide4_1Img from "./assets/slide_4_1.jpg";
+import slide4_2Img from "./assets/slide_4_2.jpg";
+import slide4_3Img from "./assets/slide_4_3.jpg";
+import slide5Img from "./assets/slide_5.jpg";
+import slide6Img from "./assets/slide_6.jpg";
+import slide7Img from "./assets/slide_7.png";
+import slide8Img from "./assets/slide_8.jpg";
+import slide9Img from "./assets/slide_9.jpg";
+import slide10Img from "./assets/slide_10.jpg";
+import slide11Img from "./assets/slide_11.JPG";
 
 // ---------------------------------------------------------------------------
 // Canva-style Light Mode Accents
@@ -22,40 +34,30 @@ const ACCENTS = {
     dot: "bg-blue-600",
     gradientTitle: "from-blue-700 via-indigo-700 to-sky-600",
     blob: "bg-blue-200",
-    placeholderBorder: "border-blue-300 bg-blue-50/40 text-blue-900",
-    placeholderBadge: "bg-blue-600 text-white",
   },
   purple: {
     badge: "bg-indigo-50 text-indigo-700 border border-indigo-200",
     dot: "bg-indigo-600",
     gradientTitle: "from-indigo-700 via-purple-700 to-pink-600",
     blob: "bg-purple-200",
-    placeholderBorder: "border-indigo-300 bg-indigo-50/40 text-indigo-900",
-    placeholderBadge: "bg-indigo-600 text-white",
   },
   pink: {
     badge: "bg-rose-50 text-rose-700 border border-rose-200",
     dot: "bg-rose-600",
     gradientTitle: "from-rose-700 via-pink-600 to-orange-600",
     blob: "bg-rose-200",
-    placeholderBorder: "border-rose-300 bg-rose-50/40 text-rose-900",
-    placeholderBadge: "bg-rose-600 text-white",
   },
   orange: {
     badge: "bg-amber-50 text-amber-800 border border-amber-200",
     dot: "bg-amber-600",
     gradientTitle: "from-amber-700 via-orange-600 to-red-600",
     blob: "bg-amber-200",
-    placeholderBorder: "border-amber-300 bg-amber-50/40 text-amber-900",
-    placeholderBadge: "bg-amber-600 text-white",
   },
   gold: {
     badge: "bg-yellow-50 text-yellow-800 border border-yellow-200",
     dot: "bg-amber-600",
     gradientTitle: "from-amber-700 via-yellow-600 to-orange-600",
     blob: "bg-yellow-200",
-    placeholderBorder: "border-yellow-400 bg-yellow-50/50 text-amber-900",
-    placeholderBadge: "bg-amber-600 text-white",
   },
 };
 
@@ -72,17 +74,13 @@ const SLIDES = [
       "Panduan praktis memanfaatkan AI sebagai asisten belajar sehari-hari",
       "Menumbuhkan etika, kejujuran, dan cara berpikir kritis di era digital",
     ],
-    visualGuidance: {
-      title: "Foto Kegiatan KKN / Ilustrasi Utama Sinau Digital",
-      instruction:
-        "Gunakan foto kelompok KKN bersama pelajar desa, atau ilustrasi pelajar SMP/SMA modern sedang belajar dengan bantuan teknologi digital.",
-      ratio: "Rasio 16:9 • Resolusi Tinggi (PNG/JPG)",
-    },
+    image: slide1Img,
+    imageAlt: "Ilustrasi utama Sinau Digital KKN",
     notes: `Selamat pagi/siang adik-adik SMP dan SMA serta bapak/ibu sekalian! Perkenalkan kami dari tim KKN. Hari ini kita akan belajar bersama lewat program 'Sinau Digital: Kenalan Sama AI, Asisten Pintar Pelajar Masa Depan'. Kita akan belajar dengan bahasa sehari-hari yang mudah dipahami serta penuh dengan contoh seru!`,
   },
-  // 2. FENOMENA SEHARI-HARI (Tanpa tag hook)
+  // 2. FENOMENA SEHARI-HARI
   {
-    tag: "", // Kosong agar tidak ada kata "hook"
+    tag: "",
     accent: "blue",
     layout: "split",
     title: "Kenapa Video di HP Kamu Bisa Pas Sesuai Kesukaanmu?",
@@ -92,12 +90,8 @@ const SLIDES = [
       "Itulah contoh kerja AI (Kecerdasan Buatan) yang sudah menempel di HP kita dari bangun sampai tidur",
       "Rekomendasi lagu yang cocok, terjemahan otomatis, hingga filter kamera — semuanya dibantu oleh AI",
     ],
-    visualGuidance: {
-      title: "Ilustrasi Beranda Video / Rekomendasi Pintar di HP",
-      instruction:
-        "Gunakan gambar atau tangkapan layar (screenshot) beranda video edukasi/musik di HP (seperti Reels/YouTube Shorts) atau ilustrasi remaja sedang menonton video edukatif.",
-      ratio: "Rasio 4:3 atau 16:9 • Ilustrasi HP / Media Sosial",
-    },
+    image: slide2Img,
+    imageAlt: "Rekomendasi video pintar di HP",
     notes: `Adik-adik, coba perhatikan HP kalian saat menonton video pendek. Kenapa ya tontonannya bisa pas banget sama hobi kita? Misalnya yang suka bola muncul bola, yang suka musik muncul musik. Itu bukan kebetulan, tapi kerja sistem pintar bernama AI yang mempelajari kebiasaan kita sehari-hari.`,
   },
   // 3. APA ITU AI
@@ -112,19 +106,15 @@ const SLIDES = [
       "Bukan robot jahat di film fiksi, melainkan asisten digital yang siap membantu menjawab pertanyaanmu",
       "Siap membantu belajar kapan saja 24 jam, sabar, dan tidak pernah lelah",
     ],
-    visualGuidance: {
-      title: "Perbandingan Mitos Robot Fiksi vs Asisten Nyata di Laptop",
-      instruction:
-        "Gunakan gambar ilustrasi yang menunjukkan asisten digital ramah di dalam layar laptop/komputer yang sedang membantu seorang siswa mengerjakan tugas sekolah.",
-      ratio: "Rasio 4:3 atau 16:9 • Ilustrasi Asisten Belajar",
-    },
+    image: slide3Img,
+    imageAlt: "Perbandingan AI robot vs asisten belajar",
     notes: `Jadi apa sebenarnya AI itu? AI adalah kepanjangan dari Artificial Intelligence atau Kecerdasan Buatan. Bayangkan AI ini seperti asisten pribadi di dalam komputer atau HP yang pintar dan sangat sabar membantu kita belajar materi sekolah kapan pun kita butuh.`,
   },
-  // 4. JENIS-JENIS AI
+  // 4. JENIS-JENIS AI (3 Gambar)
   {
     tag: "Kemampuan AI",
     accent: "blue",
-    layout: "split",
+    layout: "split-multi",
     title: "3 Kemampuan Utama AI Masa Kini",
     subtitle: "Tiga cara AI membantu aktivitas kita sehari-hari",
     points: [
@@ -132,12 +122,11 @@ const SLIDES = [
       "Mengenali Gambar & Wajah (Klasifikasi): Membuka kunci HP dengan wajah atau menyaring pesan penipuan",
       "Membuat Karya Baru (Generatif): Membantu merangkum pelajaran, membuat puisi, gambar, hingga musik",
     ],
-    visualGuidance: {
-      title: "Infografis 3 Pilar Kemampuan AI",
-      instruction:
-        "Gunakan gambar infografis atau ikon visual 3 pilar: (1) Ikon Rekomendasi Musik/Video, (2) Ikon Pemindai Wajah Keamanan HP, dan (3) Ikon AI Kreatif/Generatif.",
-      ratio: "Rasio 16:9 atau 4:3 • Infografis 3 Bagian",
-    },
+    multiImages: [
+      { src: slide4_1Img, label: "1. Prediksi" },
+      { src: slide4_2Img, label: "2. Klasifikasi" },
+      { src: slide4_3Img, label: "3. Generatif" },
+    ],
     notes: `Ada 3 kemampuan utama AI yang paling sering kita temui. Pertama, menebak kesukaan kita. Kedua, mengenali wajah atau memilah pesan palsu. Dan ketiga yang paling seru: AI Generatif yang bisa membuat rangkuman teks, gambar, atau ide kreatif dari nol.`,
   },
   // 5. TIPS BELAJAR
@@ -152,12 +141,8 @@ const SLIDES = [
       "Butuh contoh soal latihan? AI bisa membuatkan latihan soal matematika atau IPA dalam beberapa detik",
       "Belajar jadi lebih menyenangkan, paham lebih cepat, dan tugas sekolah lebih rapi",
     ],
-    visualGuidance: {
-      title: "Screenshot Percakapan Siswa & AI Mengulas Pelajaran",
-      instruction:
-        "Gunakan tangkapan layar percakapan tanya-jawab edukatif (contoh: penjelasan rumus IPA/Matematika dengan bahasa sederhana) atau foto siswa belajar dengan laptop.",
-      ratio: "Rasio 4:3 atau 16:9 • Contoh Chat Edukatif",
-    },
+    image: slide5Img,
+    imageAlt: "Tips belajar dengan AI",
     notes: `Buat adik-adik SMP dan SMA, ini manfaat terbesarnya. Kalau ada pelajaran yang rumit, kamu bisa minta AI menjelaskannya dengan contoh sehari-hari. Kamu juga bisa minta latihan soal sebelum ujian agar semakin paham.`,
   },
   // 6. LIVE DEMO
@@ -166,18 +151,14 @@ const SLIDES = [
     accent: "pink",
     layout: "split",
     title: "Mari Kita Coba Praktik Langsung!",
-    subtitle: "Membuktikan kecepatan dan kecerdasan AI secara interaktif",
+    subtitle: "Melihat langsung contoh pemanfaatan AI untuk tugas sekolah",
     points: [
-      "Sekarang kita buktikan kecanggihan AI secara langsung di depan layar",
-      "Siapa yang mau memberikan ide atau pertanyaan menarik untuk AI?",
-      "Kita bisa minta AI membuat ringkasan sejarah desa atau puisi bertema sekolah kita",
+      "Membuat Ringkasan Pelajaran: Mengubah teks materi atau bab buku yang panjang menjadi poin-poin ringkas yang mudah dimengerti",
+      "Penjelasan Konsep & Rumus: Meminta penjelasan materi rumit dengan contoh analogi sederhana dalam hitungan detik",
+      "Eksplorasi Ide Kreatif: Membantu merancang ide proyek sekolah, puisi, hingga kerangka karangan dengan cepat",
     ],
-    visualGuidance: {
-      title: "Foto/Ilustrasi Demonstrasi Mengetik Perintah (Prompt)",
-      instruction:
-        "Gunakan gambar ilustrasi kotak pencarian/mengetik prompt AI yang sedang membuat puisi desa, ringkasan sejarah lokal, atau ide kegiatan sekolah.",
-      ratio: "Rasio 4:3 atau 16:9 • Ilustrasi Prompt & Output",
-    },
+    image: slide6Img,
+    imageAlt: "Praktik prompt AI interaktif",
     notes: `Belajar tidak lengkap kalau tidak kita coba langsung. Ayo, adik-adik siapa yang mau menyumbang ide pertanyaan atau perintah untuk AI? Kita coba ketik bersama-sama dan lihat hasil jawaban AI!`,
   },
   // 7. PERINGATAN / HALU
@@ -192,12 +173,8 @@ const SLIDES = [
       "Jangan langsung disalin mentah-mentah, selalu baca dan periksa kebenarannya di buku pelajaran",
       "Ingat: AI adalah alat bantu, bukan satu-satunya sumber kebenaran mutlak",
     ],
-    visualGuidance: {
-      title: "Ilustrasi Memeriksa Buku Pelajaran & Cek Fakta",
-      instruction:
-        "Gunakan gambar ilustrasi pelajar sedang membandingkan informasi di laptop dengan buku teks pelajaran sekolah atau bertanya kepada guru.",
-      ratio: "Rasio 4:3 atau 16:9 • Ilustrasi Cek Fakta",
-    },
+    image: slide7Img,
+    imageAlt: "Pentingnya cek fakta dan membaca buku",
     notes: `Tapi ingat ya adik-adik, AI itu bukan dukun atau guru yang selalu benar 100%. Kadang AI bisa keliru atau salah informasi. Jadi setiap dapat jawaban dari AI, wajib kita baca lagi dan cocokkan dengan buku sekolah kita.`,
   },
   // 8. ETIKA & KEJUJURAN
@@ -212,32 +189,21 @@ const SLIDES = [
       "Waspada berita bohong (hoax) dan foto/video palsu buatan AI yang semakin mirip aslinya",
       "Jadilah pelajar cerdas: Selalu periksa fakta sebelum mempercayai atau membagikan berita",
     ],
-    visualGuidance: {
-      title: "Infografis Perbandingan: Belajar Jujur vs Menyalin Mentah",
-      instruction:
-        "Gunakan ilustrasi infografis timbangan atau perbandingan sikap cerdas memodifikasi/memahami ilmu vs bahaya menyalin mentah dan berita bohong (hoax).",
-      ratio: "Rasio 4:3 atau 16:9 • Infografis Etika Pelajar",
-    },
+    image: slide8Img,
+    imageAlt: "Etika belajar dan kejujuran digital",
     notes: `Bagian ini sangat penting untuk masa depan kalian. Gunakan AI untuk membantu paham pelajaran, bukan untuk menyalin tugas sekolah tanpa dibaca. Selain itu, hati-hati terhadap berita palsu atau foto edit AI di media sosial.`,
   },
-  // 9. LIVE GAME
+  // 9. LIVE GAME (Dengan tautan Game Gemini AI)
   {
-    tag: "Permainan Seru",
+    tag: "",
     accent: "pink",
-    layout: "split",
-    title: "Permainan Sensor Gerakan Tangan AI!",
-    subtitle: "Merasakan langsung teknologi visi komputer (Computer Vision)",
-    points: [
-      "Tanpa menekan tombol, cukup gerakkan tanganmu di depan kamera komputer",
-      "AI akan mengenali gerakan tanganmu untuk menyusun teka-teki gambar",
-      "Siap-siap maju ke depan dan tunjukkan kehebatanmu!",
-    ],
-    visualGuidance: {
-      title: "Foto/Ilustrasi Sensor Kamera Mendeteksi Gerakan Tangan",
-      instruction:
-        "Gunakan gambar ilustrasi atau foto seseorang menggerakkan tangan di depan kamera laptop dengan indikator sensor pengenalan gerakan.",
-      ratio: "Rasio 4:3 atau 16:9 • Ilustrasi Sensor Gerakan",
-    },
+    layout: "image-only",
+    title: "",
+    points: [],
+    image: slide9Img,
+    imageAlt: "Permainan sensor gerakan tangan AI",
+    link: "https://gemini.google.com/share/55e63fde91fd",
+    linkText: "Buka Game Gemini AI →",
     notes: `Sekarang waktunya kita bermain! Kita akan mencoba teknologi AI yang membaca gerakan tangan lewat kamera. Siapa adik-adik yang mau mencoba bermain di depan?`,
   },
   // 10. KAHOOT TIME
@@ -245,19 +211,11 @@ const SLIDES = [
     tag: "Kuis Berhadiah",
     accent: "gold",
     layout: "split",
-    title: "Kuis Cepat: Ayo Rebut Hadiah Menarik dari KKN!",
-    subtitle: "Uji pemahaman materi seru bersama teman-temanmu",
-    points: [
-      "Siapkan HP kalian atau maju bersama tim, kita main kuis interaktif",
-      "Jawaban tercepat dan paling tepat akan mendapatkan nilai tertinggi",
-      "Ada hadiah spesial dari kakak-kakak KKN untuk pemenang 1, 2, dan 3!",
-    ],
-    visualGuidance: {
-      title: "Ilustrasi Kuis Interaktif / Podium Hadiah KKN",
-      instruction:
-        "Gunakan foto bingkisan hadiah KKN yang sudah disiapkan, atau ilustrasi suasana kuis interaktif yang penuh semangat dengan piala juara 1, 2, dan 3.",
-      ratio: "Rasio 4:3 atau 16:9 • Foto Hadiah / Kuis Seru",
-    },
+    title: "Waktunya Kuis Interaktif Sinau Digital!",
+    subtitle: "Ayo uji pemahamanmu dan rebut hadiah spesial dari Tim KKN",
+    points: [],
+    image: slide10Img,
+    imageAlt: "Kuis interaktif berhadiah KKN",
     notes: `Sebagai akhir sesi seru kita, mari kita ikuti kuis singkat tentang materi AI yang baru saja kita pelajari. Siapkan diri kalian, karena ada hadiah menarik untuk para pemenang!`,
   },
   // 11. KESIMPULAN & PENUTUP
@@ -272,64 +230,14 @@ const SLIDES = [
       "Utamakan Kejujuran — jadikan AI alat bantu memahami pelajaran, bukan alat untuk malas berpikir",
       "Berpikir Kritis & Cek Fakta — selalu saring informasi sebelum percaya dan membagikan kabar",
     ],
-    visualGuidance: {
-      title: "Foto Bersama Tim KKN / Ilustrasi Masa Depan Pelajar Desa",
-      instruction:
-        "Gunakan foto kebersamaan tim KKN di desa atau ilustrasi penutup yang menginspirasi tentang pelajar berprestasi membangun masa depan desa.",
-      ratio: "Rasio 16:9 • Foto Penutup / Ilustrasi Menginspirasi",
-    },
+    image: slide11Img,
+    imageAlt: "Penutup dan kesimpulan Sinau Digital KKN",
     notes: `Kesimpulan dari pertemuan kita hari ini: AI adalah teknologi luar biasa yang siap membantu adik-adik berprestasi. Gunakanlah dengan jujur, bijak, dan tetap kritis. Terima kasih banyak atas antusiasme adik-adik SMP/SMA dan seluruh hadirin. Semoga ilmu hari ini bermanfaat untuk masa depan kita semua!`,
   },
 ];
 
 function pad(n) {
   return String(n).padStart(2, "0");
-}
-
-// ---------------------------------------------------------------------------
-// DUMMY IMAGE PLACEHOLDER (Cukup besar, responsif tanpa memicu scroll)
-// ---------------------------------------------------------------------------
-function DummyVisualPlaceholder({ guidance, accent, index }) {
-  if (!guidance) return null;
-
-  return (
-    <div
-      className={`w-full h-full min-h-[220px] sm:min-h-[280px] max-h-[380px] lg:max-h-[420px] rounded-3xl border-2 border-dashed ${accent.placeholderBorder} flex flex-col items-center justify-center p-6 sm:p-8 text-center transition-all relative overflow-hidden shadow-xs`}
-    >
-      {/* Latar belakang halus */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-white/40 pointer-events-none" />
-
-      <div className="relative z-10 flex flex-col items-center justify-center max-w-lg mx-auto space-y-3">
-        {/* Badge Nomor & Tipe */}
-        <div className="flex items-center gap-2">
-          <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${accent.placeholderBadge}`}>
-            TEMPAT GAMBAR • SLIDE {pad(index + 1)}
-          </span>
-        </div>
-
-        {/* Ikon Gambar Besar */}
-        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700">
-          <ImageIcon className="w-8 h-8 stroke-[1.75]" />
-        </div>
-
-        {/* Judul Visual */}
-        <h4 className="text-base sm:text-lg font-extrabold text-slate-900 leading-snug">
-          {guidance.title}
-        </h4>
-
-        {/* Arahan detail untuk user mencari gambar */}
-        <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed bg-white/80 border border-slate-200/80 px-4 py-3 rounded-2xl shadow-2xs">
-          <span className="font-bold text-slate-900">Arahan Gambar: </span>
-          {guidance.instruction}
-        </p>
-
-        {/* Rekomendasi Rasio */}
-        <span className="text-[11px] font-semibold text-slate-500 font-mono">
-          {guidance.ratio}
-        </span>
-      </div>
-    </div>
-  );
 }
 
 export default function SinauDigitalDeck() {
@@ -393,7 +301,7 @@ export default function SinauDigitalDeck() {
   }, [goNext, goPrev, toggleFullscreen]);
 
   return (
-    // FULLSCREEN RESPONSIVE WITHOUT OVERFLOW SCROLL ON VIEWPORT (h-screen overflow-hidden)
+    // FULLSCREEN RESPONSIVE TANPA SCROLL VERTICAL DI LAYAR UTAMA
     <div className="w-full h-screen max-h-screen bg-slate-50 text-slate-900 relative overflow-hidden flex flex-col font-sans antialiased selection:bg-blue-600 selection:text-white">
       {/* Decorative Light Mode Canva Blobs */}
       <div
@@ -474,7 +382,7 @@ export default function SinauDigitalDeck() {
         />
       </div>
 
-      {/* MAIN FULLSCREEN CANVA SLIDE CANVAS (flex-1 min-h-0 overflow-hidden) */}
+      {/* MAIN FULLSCREEN CANVA SLIDE CANVAS */}
       <main className="relative z-10 flex-1 min-h-0 flex items-center justify-center px-4 sm:px-10 lg:px-16 py-3 sm:py-4 overflow-hidden">
         <div className="w-full max-w-7xl h-full flex flex-col justify-center">
           {/* Tag badge (jika ada) */}
@@ -489,8 +397,47 @@ export default function SinauDigitalDeck() {
             </div>
           )}
 
-          {/* Layout Cover vs Split */}
-          {slide.layout === "cover" ? (
+          {/* LAYOUT IMAGE-ONLY (Slide 9: Hanya sisakan gambarnya di tengah halaman beserta tombol link game) */}
+          {slide.layout === "image-only" ? (
+            <div className="w-full h-full flex flex-col items-center justify-center gap-4">
+              {slide.link ? (
+                <a
+                  href={slide.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Klik gambar untuk membuka Game Gemini AI"
+                  className="inline-flex max-w-full max-h-[65vh] rounded-3xl bg-white border border-slate-200 shadow-xl p-2.5 sm:p-3 hover:shadow-2xl hover:border-pink-300 transition-all group"
+                >
+                  <img
+                    src={slide.image}
+                    alt={slide.imageAlt || "Visual Slide"}
+                    className="max-h-[58vh] w-auto max-w-full object-contain rounded-2xl block group-hover:scale-[1.01] transition-transform duration-300"
+                  />
+                </a>
+              ) : (
+                <div className="inline-flex max-w-full max-h-[75vh] rounded-3xl bg-white border border-slate-200 shadow-xl p-2.5 sm:p-3">
+                  <img
+                    src={slide.image}
+                    alt={slide.imageAlt || "Visual Slide"}
+                    className="max-h-[70vh] w-auto max-w-full object-contain rounded-2xl block"
+                  />
+                </div>
+              )}
+
+              {slide.link && (
+                <a
+                  href={slide.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white font-extrabold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+                >
+                  <span>{slide.linkText || "Buka Game Gemini AI →"}</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
+            </div>
+          ) : slide.layout === "cover" ? (
+            /* LAYOUT COVER (Slide 1 & 11) */
             <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center h-full max-h-full">
               {/* Kiri Cover: Judul & Poin */}
               <div className="lg:col-span-6 space-y-4 flex flex-col justify-center">
@@ -505,34 +452,108 @@ export default function SinauDigitalDeck() {
                   </p>
                 )}
 
-                <div className="space-y-2.5 pt-1">
-                  {slide.points.map((p, i) => (
-                    <div
-                      key={i}
-                      className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-3"
-                    >
-                      <div className="w-6 h-6 rounded-lg bg-blue-50 text-blue-600 font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
-                        {i + 1}
+                {slide.points && slide.points.length > 0 && (
+                  <div className="space-y-2.5 pt-1">
+                    {slide.points.map((p, i) => (
+                      <div
+                        key={i}
+                        className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-3"
+                      >
+                        <div className="w-6 h-6 rounded-lg bg-blue-50 text-blue-600 font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                          {i + 1}
+                        </div>
+                        <p className="text-xs sm:text-sm text-slate-800 font-medium leading-relaxed">
+                          {p}
+                        </p>
                       </div>
-                      <p className="text-xs sm:text-sm text-slate-800 font-medium leading-relaxed">
-                        {p}
-                      </p>
+                    ))}
+                  </div>
+                )}
+
+                {slide.link && (
+                  <div className="pt-2">
+                    <a
+                      href={slide.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-extrabold text-xs sm:text-sm shadow-md transition-all"
+                    >
+                      <span>{slide.linkText || "Buka Tautan →"}</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* Kanan Cover: Gambar Asli dengan Pembungkus Pas */}
+              <div className="lg:col-span-6 w-full h-full flex items-center justify-center">
+                <div className="inline-flex max-w-full max-h-[380px] lg:max-h-[420px] rounded-3xl bg-white border border-slate-200 shadow-xl p-2 sm:p-2.5">
+                  <img
+                    src={slide.image}
+                    alt={slide.imageAlt || slide.title}
+                    className="max-h-[360px] lg:max-h-[390px] w-auto max-w-full object-contain rounded-2xl block"
+                  />
+                </div>
+              </div>
+            </div>
+          ) : slide.layout === "split-multi" ? (
+            /* LAYOUT SPLIT DENGAN 3 GAMBAR (Slide 4) */
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center h-full max-h-full">
+              {/* Kolom Kiri: Judul & Poin */}
+              <div className="lg:col-span-5 space-y-4 flex flex-col justify-center">
+                <h1
+                  className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight bg-gradient-to-r ${accent.gradientTitle} bg-clip-text text-transparent leading-tight`}
+                >
+                  {slide.title}
+                </h1>
+                {slide.subtitle && (
+                  <p className="text-sm sm:text-base text-slate-600 font-semibold">
+                    {slide.subtitle}
+                  </p>
+                )}
+
+                {slide.points && slide.points.length > 0 && (
+                  <ul className="space-y-3">
+                    {slide.points.map((p, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-slate-800 text-sm sm:text-base font-medium leading-relaxed"
+                      >
+                        <span
+                          className={`mt-2 w-2 h-2 rounded-full flex-shrink-0 ${accent.dot}`}
+                        />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
+              {/* Kolom Kanan: 3 Kartu Gambar Pilar AI */}
+              <div className="lg:col-span-7 w-full h-full flex items-center justify-center">
+                <div className="grid grid-cols-3 gap-3 w-full">
+                  {slide.multiImages.map((mImg, mIdx) => (
+                    <div
+                      key={mIdx}
+                      className="bg-white border border-slate-200 rounded-2xl p-2 shadow-md flex flex-col items-center"
+                    >
+                      <div className="w-full h-44 sm:h-52 rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center mb-2">
+                        <img
+                          src={mImg.src}
+                          alt={mImg.label}
+                          className="max-h-full max-w-full object-contain block"
+                        />
+                      </div>
+                      <div className="text-center font-bold text-xs text-slate-800 py-1">
+                        {mImg.label}
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
-
-              {/* Kanan Cover: Gambar Dummy Besar */}
-              <div className="lg:col-span-6 w-full h-full flex items-center justify-center">
-                <DummyVisualPlaceholder
-                  guidance={slide.visualGuidance}
-                  accent={accent}
-                  index={index}
-                />
-              </div>
             </div>
           ) : (
-            /* Layout Split Widescreen */
+            /* LAYOUT SPLIT WIDESCREEN STANDAR (Slide 2, 3, 5, 6, 7, 8, 10) */
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center h-full max-h-full">
               {/* Kolom Kiri: Judul & Poin Materi */}
               <div className="lg:col-span-6 space-y-4 sm:space-y-5 flex flex-col justify-center">
@@ -548,33 +569,51 @@ export default function SinauDigitalDeck() {
                   </p>
                 )}
 
-                <ul className="space-y-3 sm:space-y-3.5">
-                  {slide.points.map((p, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-3 text-slate-800 text-sm sm:text-base font-medium leading-relaxed"
+                {slide.points && slide.points.length > 0 && (
+                  <ul className="space-y-3 sm:space-y-3.5">
+                    {slide.points.map((p, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-slate-800 text-sm sm:text-base font-medium leading-relaxed"
+                      >
+                        <span
+                          className={`mt-2 w-2 h-2 rounded-full flex-shrink-0 ${accent.dot}`}
+                        />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {slide.link && (
+                  <div className="pt-2">
+                    <a
+                      href={slide.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-extrabold text-xs sm:text-sm shadow-md transition-all"
                     >
-                      <span
-                        className={`mt-2 w-2 h-2 rounded-full flex-shrink-0 ${accent.dot}`}
-                      />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
+                      <span>{slide.linkText || "Buka Tautan →"}</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                )}
               </div>
 
-              {/* Kolom Kanan: Gambar Dummy Besar dengan Arahan */}
+              {/* Kolom Kanan: Gambar Asli dengan Pembungkus Pas */}
               <div className="lg:col-span-6 w-full h-full flex items-center justify-center">
-                <DummyVisualPlaceholder
-                  guidance={slide.visualGuidance}
-                  accent={accent}
-                  index={index}
-                />
+                <div className="inline-flex max-w-full max-h-[380px] lg:max-h-[420px] rounded-3xl bg-white border border-slate-200 shadow-xl p-2 sm:p-2.5">
+                  <img
+                    src={slide.image}
+                    alt={slide.imageAlt || slide.title}
+                    className="max-h-[360px] lg:max-h-[390px] w-auto max-w-full object-contain rounded-2xl block"
+                  />
+                </div>
               </div>
             </div>
           )}
 
-          {/* Floating / Collapsible Speaker Notes (ditampilkan hanya jika diaktifkan N) */}
+          {/* Floating / Collapsible Speaker Notes */}
           {showNotes && (
             <div className="absolute bottom-4 left-6 right-6 z-30 p-4 rounded-2xl bg-slate-900/95 text-white border border-slate-700 shadow-2xl max-w-4xl mx-auto">
               <div className="flex items-center justify-between mb-1.5">
@@ -592,7 +631,7 @@ export default function SinauDigitalDeck() {
         </div>
       </main>
 
-      {/* Bottom Footer Navigation Bar: Tetap ramping agar tidak scroll */}
+      {/* Bottom Footer Navigation Bar */}
       <footer className="relative z-20 w-full flex-shrink-0 px-4 sm:px-10 py-2.5 sm:py-3 bg-white/80 backdrop-blur-md border-t border-slate-200/80 flex items-center justify-between shadow-2xs">
         <button
           onClick={goPrev}
